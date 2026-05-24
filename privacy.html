@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — Krick Studio Uploader</title>
+<style>
+  :root { color-scheme: dark; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    background: #0b0b0d;
+    color: #e8e8ea;
+    margin: 0;
+    line-height: 1.65;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 64px 24px; }
+  h1 { font-size: 32px; letter-spacing: -0.02em; margin-bottom: 8px; }
+  h2 { font-size: 20px; margin-top: 40px; letter-spacing: -0.01em; }
+  .meta { color: #9a9aa3; font-size: 14px; margin-bottom: 32px; }
+  p, li { color: #c8c8cd; }
+  ul { padding-left: 22px; }
+  li { margin: 6px 0; }
+  a { color: #ff5e3a; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code {
+    background: #1d1d22;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 13px;
+  }
+  .back { display: inline-block; margin-bottom: 32px; color: #9a9aa3; font-size: 14px; }
+  footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid #25252c; color: #6a6a73; font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="index.html">&larr; back to home</a>
+
+<h1>Privacy Policy</h1>
+<div class="meta">Effective date: 2026-05-24 &nbsp;&middot;&nbsp; Last updated: 2026-05-24</div>
+
+<p>
+  This Privacy Policy describes how the Krick Studio Uploader application
+  ("the App", "we") handles information when used to publish content to a
+  YouTube channel.
+</p>
+
+<h2>Who runs the App</h2>
+<p>
+  The App is operated by Tobias Krick, an individual content creator and
+  professional athlete based in Germany. Contact:
+  <a href="mailto:tobiaskrickyt@gmail.com">tobiaskrickyt@gmail.com</a>.
+</p>
+
+<h2>What data the App accesses</h2>
+<p>
+  When you authorize the App with your Google account, the App receives an
+  OAuth 2.0 token that grants the following scopes:
+</p>
+<ul>
+  <li><code>https://www.googleapis.com/auth/youtube.upload</code> &mdash; permission to upload video files to your own YouTube channel.</li>
+  <li><code>https://www.googleapis.com/auth/youtube</code> &mdash; permission to set video metadata (title, description, tags, category, privacy status, made-for-kids flag) on uploads created by the App.</li>
+  <li><code>https://www.googleapis.com/auth/youtube.readonly</code> &mdash; permission to read the channel's upload history so the App's daily-cap logic can verify whether a video has already been published that day.</li>
+</ul>
+
+<h2>How the App uses that access</h2>
+<p>
+  The App uses these scopes only to:
+</p>
+<ul>
+  <li>Upload short-form video files that the creator has explicitly placed in the local upload queue.</li>
+  <li>Attach the metadata the creator has prepared in advance (title, description, tags, category).</li>
+  <li>Read the channel's most recent uploads to enforce a "max one upload per calendar day" cap.</li>
+</ul>
+<p>
+  The App does not read your private videos beyond what is needed for the daily-cap
+  check, does not modify videos that were not uploaded by the App, and does not
+  delete any videos.
+</p>
+
+<h2>Where data is stored</h2>
+<p>
+  All data handled by the App is stored locally on a single private server
+  controlled by the creator:
+</p>
+<ul>
+  <li>Your OAuth refresh token and access token are stored in a file named <code>token.json</code> on that server only.</li>
+  <li>The local upload queue (mp4 files + metadata json) is stored on that server only.</li>
+  <li>Upload logs are stored on that server only.</li>
+</ul>
+<p>
+  No data is transmitted to any third-party server, analytics service, advertising
+  network, or shared backend. The App is single-user: only the creator's own
+  Google account is authorized.
+</p>
+
+<h2>What we do NOT do</h2>
+<ul>
+  <li>We do not sell, rent, trade, or share any data with third parties.</li>
+  <li>We do not use the data for advertising or profiling.</li>
+  <li>We do not collect analytics, telemetry, or usage statistics from third-party users (because there are no third-party users).</li>
+  <li>We do not train any AI or machine-learning model on the data.</li>
+  <li>We do not transfer data outside Germany / the EU.</li>
+</ul>
+
+<h2>How to revoke access</h2>
+<p>
+  You can revoke the App's access to your Google account at any time by visiting
+  <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>,
+  finding "Krick Studio Uploader" (or its OAuth client name), and clicking
+  "Remove Access". After revocation, the App will be unable to upload further
+  videos until it is re-authorized.
+</p>
+
+<h2>Data deletion</h2>
+<p>
+  Because the App stores tokens and logs only on a single private server, data
+  deletion is performed by deleting <code>token.json</code> and the local log
+  files from that server. There is no central database to delete from.
+</p>
+<p>
+  To request manual deletion of any data, contact
+  <a href="mailto:tobiaskrickyt@gmail.com">tobiaskrickyt@gmail.com</a>.
+</p>
+
+<h2>Children</h2>
+<p>
+  The App is not directed at children under 13 and does not knowingly process
+  data from children.
+</p>
+
+<h2>Changes to this policy</h2>
+<p>
+  If this policy changes, the "Last updated" date at the top will reflect the
+  change. Material changes will be posted to this page.
+</p>
+
+<h2>Contact</h2>
+<p>
+  Questions or requests about privacy:
+  <a href="mailto:tobiaskrickyt@gmail.com">tobiaskrickyt@gmail.com</a>.
+</p>
+
+<footer>
+  &copy; 2026 Krick Studio &middot; <a href="index.html">home</a> &middot; <a href="terms.html">terms</a>
+</footer>
+
+</div>
+</body>
+</html>

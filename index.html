@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Krick Studio Uploader</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    background: #0b0b0d;
+    color: #e8e8ea;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 64px 24px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 48px; }
+  .logo {
+    width: 56px; height: 56px;
+    background: linear-gradient(135deg, #ff5e3a 0%, #ff2a68 100%);
+    border-radius: 14px;
+    display: grid; place-items: center;
+    font-weight: 800; font-size: 22px; color: #fff;
+  }
+  h1 { font-size: 32px; margin: 0; letter-spacing: -0.02em; }
+  .tagline { color: #9a9aa3; font-size: 15px; margin-top: 4px; }
+  h2 { font-size: 22px; margin-top: 48px; letter-spacing: -0.01em; }
+  p { color: #c8c8cd; }
+  ul { color: #c8c8cd; padding-left: 22px; }
+  li { margin: 6px 0; }
+  .card {
+    background: #15151a;
+    border: 1px solid #25252c;
+    border-radius: 14px;
+    padding: 20px 24px;
+    margin: 16px 0;
+  }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+  footer {
+    margin-top: 80px;
+    padding-top: 24px;
+    border-top: 1px solid #25252c;
+    color: #6a6a73;
+    font-size: 14px;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+  }
+  a { color: #ff5e3a; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code {
+    background: #1d1d22;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="logo">KS</div>
+  <div>
+    <h1>Krick Studio Uploader</h1>
+    <div class="tagline">Content distribution tool for athlete creators</div>
+  </div>
+</header>
+
+<p>
+  Krick Studio Uploader is a content-distribution pipeline built for professional
+  athletes who run their own social-media presence. It ingests short-form videos
+  the creator has produced, applies channel-consistent metadata (title, description,
+  hashtags), and publishes them as YouTube Shorts on a predictable daily cadence.
+</p>
+
+<p>
+  The tool was built to solve a concrete problem: top-tier athletes generate a high
+  volume of short-form footage during training, matches, and travel, but lack the
+  bandwidth to manually upload to every platform on a consistent schedule. Krick
+  Studio Uploader removes the manual step on YouTube while keeping the creator in
+  full control of which clips go live.
+</p>
+
+<h2>What it does</h2>
+<div class="grid">
+  <div class="card">
+    <strong>Queue management</strong>
+    <p>The creator curates a ranked queue of short-form clips. Each entry has its own title, description, tags, and visibility setting.</p>
+  </div>
+  <div class="card">
+    <strong>Scheduled upload</strong>
+    <p>Once per day, the next-highest-ranked clip is published as a YouTube Short to the creator's own channel.</p>
+  </div>
+  <div class="card">
+    <strong>Hard daily cap</strong>
+    <p>By design, at most one upload per calendar day to protect channel cadence and avoid algorithmic penalties.</p>
+  </div>
+  <div class="card">
+    <strong>Single-user, single-channel</strong>
+    <p>The tool authenticates to exactly one Google account and uploads to exactly one YouTube channel — the creator's own.</p>
+  </div>
+</div>
+
+<h2>Who uses it</h2>
+<p>
+  Krick Studio Uploader is currently used by Tobias Krick, a German professional
+  volleyball player and content creator
+  (<a href="https://www.youtube.com/@tobiaskrick" target="_blank" rel="noopener">@tobiaskrick</a>,
+  12.8k+ YouTube subscribers, 140+ videos). It is offered as a
+  template for other athlete creators who want to set up the same workflow on their
+  own infrastructure.
+</p>
+
+<h2>Google account access</h2>
+<p>
+  Krick Studio Uploader requests access to the following Google API scopes, used
+  only for the purposes listed:
+</p>
+<ul>
+  <li><code>youtube.upload</code> — to publish the creator's own short-form videos to the creator's own YouTube channel.</li>
+  <li><code>youtube</code> — to set video metadata (title, description, tags, category, visibility) on those same uploads.</li>
+  <li><code>youtube.readonly</code> — to read the channel's upload history so the daily-cap logic can verify whether a video has already been published that day.</li>
+</ul>
+<p>
+  The tool does not read, modify, or transmit any data outside the creator's own
+  YouTube channel. It does not share data with any third party.
+</p>
+
+<h2>Where the code runs</h2>
+<p>
+  Krick Studio Uploader runs on a single private server controlled by the creator.
+  Authentication tokens are stored on that server only. There is no shared backend,
+  no analytics, no telemetry. The creator can revoke access at any time at
+  <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>.
+</p>
+
+<footer>
+  <div>&copy; 2026 Krick Studio</div>
+  <div>
+    <a href="privacy.html">Privacy Policy</a> &middot;
+    <a href="terms.html">Terms</a> &middot;
+    <a href="mailto:tobiaskrickyt@gmail.com">Contact</a>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
